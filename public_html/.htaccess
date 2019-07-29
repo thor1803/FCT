@@ -1,0 +1,12 @@
+# PH pagespeed start
+<IfModule pagespeed_module>
+ModPagespeed on
+ModPagespeedRewriteLevel PassThrough
+ModPagespeedEnableFilters add_head,fallback_rewrite_css_urls,flatten_css_imports,rewrite_style_attributes_with_url,extend_cache,convert_meta_tags,combine_javascript,rewrite_javascript,inline_javascript,rewrite_css,combine_css,inline_css,inline_import_to_link,rewrite_images
+</IfModule>
+# PH pagespeed end 
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^futcoinstrading\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.futcoinstrading.\.com$
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.futcoinstrading.com/$1 [R,L]
